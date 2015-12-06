@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Dian.NLogEx</id>
+    <version>1.0.0.3</version>
+    <title>Dian.NLogEx</title>
+    <authors>HaungShengnan</authors>
+    <owners>HaungShengnan</owners>
+    <licenseUrl>http://www.opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/mybbcat/</projectUrl>
+    <iconUrl>https://gravatar.com/images/grav-logo-2x.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>支持输出至Elasticsearch。</description>
+    <releaseNotes> </releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags></tags>
+  </metadata>
+</package>
