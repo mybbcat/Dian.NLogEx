@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dian.NLogEx", "Dian.NLogEx.csproj", "{08EF9194-DA0C-4B22-8A21-D5BCC7BA77FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dian.NLogEx", "Dian.NlogEx\Dian.NLogEx.csproj", "{08EF9194-DA0C-4B22-8A21-D5BCC7BA77FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTest\UnitTestProject1\UnitTestProject1.csproj", "{96ED0551-5EEB-4E20-B32A-59C3B7D28CE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{08EF9194-DA0C-4B22-8A21-D5BCC7BA77FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08EF9194-DA0C-4B22-8A21-D5BCC7BA77FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08EF9194-DA0C-4B22-8A21-D5BCC7BA77FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96ED0551-5EEB-4E20-B32A-59C3B7D28CE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96ED0551-5EEB-4E20-B32A-59C3B7D28CE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96ED0551-5EEB-4E20-B32A-59C3B7D28CE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96ED0551-5EEB-4E20-B32A-59C3B7D28CE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

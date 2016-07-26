@@ -32,12 +32,16 @@
     </DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>packages\NLog.4.2.2\lib\net45\NLog.dll</HintPath>
+    <Reference Include="Elasticsearch.Net, Version=2.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>packages\Elasticsearch.Net.2.4.1\lib\net46\Elasticsearch.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NLog.Targets.ElasticSearch, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\NLog.Targets.ElasticSearch.1.0.14.0\lib\net40\NLog.Targets.ElasticSearch.dll</HintPath>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>packages\NLog.4.3.6\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog.Targets.ElasticSearch, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\NLog.Targets.ElasticSearch.2.1.0\lib\net45\NLog.Targets.ElasticSearch.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -50,9 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LogLevelEx.cs" />
-    <Compile Include="UserVisitLogger.cs" />
-    <Compile Include="NormalLogger.cs" />
+    <Compile Include="Define\LogLevelEx.cs" />
+    <Compile Include="Logger\UserVisitLogger.cs" />
+    <Compile Include="Logger\NormalLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
