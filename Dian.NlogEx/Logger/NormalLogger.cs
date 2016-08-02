@@ -15,21 +15,24 @@ namespace Dian.NLogEx
     /// </remarks>
     public class NormalLogger
     {
-        
+
         private const string CsLoggerName = "NormalLogger";
-        
+
         private static readonly Logger _logger = LogManager.GetLogger(CsLoggerName);
-        
+        /// <summary>
+        /// 按照日志的严重性倒序排列
+        /// </summary>
         private static readonly Lazy<Dictionary<LogLevelEx, LogLevel>> LogLevelMap = new Lazy<Dictionary<LogLevelEx, LogLevel>>
             (() => new Dictionary<LogLevelEx, LogLevel>
-            {{ LogLevelEx.Info, NLog.LogLevel.Info },
-            { LogLevelEx.Debug, NLog.LogLevel.Debug },
-            { LogLevelEx.Error, NLog.LogLevel.Error },
-            { LogLevelEx.Fatal, NLog.LogLevel.Fatal },
-            { LogLevelEx.Warnning, NLog.LogLevel.Warn },
-            { LogLevelEx.Trace, NLog.LogLevel.Trace }
+            {
+                { LogLevelEx.Trace, NLog.LogLevel.Trace },
+                { LogLevelEx.Debug, NLog.LogLevel.Debug },
+                { LogLevelEx.Info, NLog.LogLevel.Info },
+                { LogLevelEx.Warnning, NLog.LogLevel.Warn },
+                { LogLevelEx.Error, NLog.LogLevel.Error },
+                { LogLevelEx.Fatal, NLog.LogLevel.Fatal }
             });
-        
+
         /// <summary>
         /// 输出带有客户端请求信息的日志
         /// </summary>
@@ -41,9 +44,9 @@ namespace Dian.NLogEx
         /// <param name="message">自定义日志内容,支持格式化</param>
         /// <param name="args">与 message 结合使用，格式化的参数</param>
         public static void WriteEx(string clientIp, string requestUrl, string requestParameter,
-                            string requestBody, LogLevelEx logLevel, string message, params object[] args)
+            string requestBody, LogLevelEx logLevel, string message, params object[] args)
         {
-            LogEventInfo logInfo = CreateLogEventInfo(clientIp, requestUrl, requestParameter, requestBody, logLevel);
+            var logInfo = CreateLogEventInfo(clientIp, requestUrl, requestParameter, requestBody, logLevel);
             logInfo.Message = string.Format(message, args);
 
             _logger.Log(logInfo);
@@ -88,34 +91,45 @@ namespace Dian.NLogEx
             _logger.Log(logInfo);
         }
 
+        /// <summary>
+        /// Debug模式才生效，Relase时会不输出日志
+        /// </summary>
         public static void Trace(string message, params object[] args)
         {
             _logger.ConditionalTrace(message, args);
         }
 
+        /// <summary>
+        /// Debug模式才生效，Relase时会不输出日志
+        /// </summary>
         public static void Trace(string message)
         {
             _logger.ConditionalTrace(message);
         }
 
-        public static void Trace(Exception ex)
+        public static void Warn(string message, params object[] args)
         {
-            _logger.ConditionalTrace(ex);
+            _logger.Warn(message, args);
+        }
+
+        public static void Warn(string message)
+        {
+            _logger.Warn(message);
         }
 
         public static void Debug(string message, params object[] args)
         {
-            _logger.ConditionalDebug(message, args);
+            _logger.Debug(message, args);
         }
 
         public static void Debug(string message)
         {
-            _logger.ConditionalDebug(message);
+            _logger.Debug(message);
         }
 
         public static void Debug(Exception ex)
         {
-            _logger.ConditionalDebug(ex);
+            _logger.Debug(ex);
         }
 
         public static void Info(string message, params object[] args)
@@ -126,11 +140,6 @@ namespace Dian.NLogEx
         public static void Info(string message)
         {
             _logger.Info(message);
-        }
-
-        public static void Info(Exception ex)
-        {
-            _logger.Info(ex);
         }
 
         public static void Error(string message, params object[] args)
@@ -162,6 +171,7 @@ namespace Dian.NLogEx
         {
             _logger.Fatal(ex);
         }
+
         private static LogEventInfo CreateLogEventInfo(string clientIp, string requestUrl, string requestParameter, string requestBody, LogLevelEx logLevel)
         {
             var logInfo = new LogEventInfo
@@ -169,7 +179,7 @@ namespace Dian.NLogEx
                 Level = LogLevelMap.Value[logLevel],
                 LoggerName = CsLoggerName
             };
-            
+
             logInfo.Properties["clientIp"] = clientIp;
             logInfo.Properties["requestUrl"] = requestUrl;
             logInfo.Properties["requestParameter"] = requestParameter;
@@ -180,7 +190,4 @@ namespace Dian.NLogEx
 
 
     }
-
-    /*var stackFrame = new StackFrame(1, false);
-            var logger = LogManager.GetLogger(stackFrame.GetMethod().DeclaringType.FullName);*/
 }
