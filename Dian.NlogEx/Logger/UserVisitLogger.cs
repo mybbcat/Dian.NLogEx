@@ -12,8 +12,8 @@ namespace Dian.NLogEx
     /// </remarks>
     public sealed class UserVisitLogger
     {
-        private const string CsLoggerName = "UserVisitLogger";
-        private static readonly Logger _logger = LogManager.GetLogger(CsLoggerName);
+        private const string CsLoggerName = "WebUserVisitLogger";
+        private static readonly NLog.Logger _logger = LogManager.GetLogger(CsLoggerName);
 
         /// <summary>
         /// 按照日志的严重性倒序排列

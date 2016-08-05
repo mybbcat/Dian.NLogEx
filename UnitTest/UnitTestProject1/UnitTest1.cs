@@ -14,8 +14,8 @@ namespace UnitTestProject1
         [Test]
         public void TestMethod1()
         {
-            NormalLogger.Fatal(GetType(), "This is a {0} log text!", new Exception(),"fatal");
-            NormalLogger.Fatal(GetType(), "This is a  log text!");
+            Logger.Fatal(GetType(), "This is a {0} log text!", new Exception(),"fatal");
+            Logger.Fatal(GetType(), "This is a  log text!");
             Assert.IsTrue(true);
         }
 
@@ -25,7 +25,7 @@ namespace UnitTestProject1
             var i = 1;
             while (i <= 2000)
             {
-                NormalLogger.Trace(GetType(),"#{0} log text!", i);
+                Logger.Trace(GetType(),"#{0} log text!", i);
                 i++;
                 Thread.Sleep(100);
             }

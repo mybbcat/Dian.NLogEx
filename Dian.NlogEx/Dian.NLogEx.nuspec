@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Dian.NLogEx</id>
-    <version>1.0.7</version>
+    <version>1.0.9</version>
     <title>Dian.NLogEx</title>
     <authors>HaungShengnan</authors>
     <owners>HaungShengnan</owners>
@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>支持输出至Elasticsearch。</description>
     <releaseNotes> </releaseNotes>
-    <copyright>Copyright 2015</copyright>
+    <copyright>Copyright 2016</copyright>
     <tags></tags>
   </metadata>
 </package>

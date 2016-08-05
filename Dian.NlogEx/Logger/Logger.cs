@@ -9,15 +9,11 @@ namespace Dian.NLogEx
     /// <summary>
     /// 普通通用的日志记录器
     /// </summary>
-    /// <remarks>
-    /// Nlog.logger扩展类
-    /// Trace 与 Debug 的输出，只在 DEBUG 模式生效
-    /// </remarks>
-    public class NormalLogger
+    public class Logger
     {
         private const string CsLoggerName = "NormalLogger";
-        private static readonly Logger _logger = LogManager.GetLogger(CsLoggerName);
-
+        private static readonly NLog.Logger _logger = LogManager.GetLogger(CsLoggerName);
+        
         /// <summary>
         /// 按照日志的严重性倒序排列
         /// </summary>
