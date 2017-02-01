@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Dian.NLogEx</id>
-    <version>1.0.11</version>
+    <version>1.0.14</version>
     <title>Dian.NLogEx</title>
     <authors>HaungShengnan</authors>
     <owners>HaungShengnan</owners>
@@ -14,5 +14,11 @@
     <releaseNotes> </releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags></tags>
+	<dependencies>
+      <dependency id="Elasticsearch.Net" version="[5.0.1]" />
+	  <dependency id="Newtonsoft.Json" version="9.0.1" />
+	  <dependency id="NLog" version="[4.3.11]" />
+	  <dependency id="NLog.Targets.ElasticSearch" version="[2.1.6]" />
+    </dependencies>
   </metadata>
 </package>
