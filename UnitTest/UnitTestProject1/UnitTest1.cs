@@ -15,8 +15,21 @@ namespace UnitTestProject1
         [Test]
         public void TestMethod1()
         {
-            Logger.Fatal(GetType(), "This is a {0} log text!", new Exception(),"fatal");
-            Logger.Trace(GetType(), "This is a  log text!");
+            try
+            {
+                var l = 0;
+                var i = 100 / l;
+                Logger.Info(GetType(),i.ToString());
+            }
+            catch (Exception ex)
+            {
+                var i = 1;
+                while (i <= 20)
+                {
+                    Logger.Fatal(GetType(), "TestMethod1", ex);
+                    i++;
+                }
+            }
             Assert.IsTrue(true);
         }
 
@@ -24,11 +37,10 @@ namespace UnitTestProject1
         public void TestAsync()
         {
             var i = 1;
-            while (i <= 2000)
+            while (i <= 20)
             {
-                Logger.Trace(GetType(),"#{0} log text!", i);
+                Logger.Fatal(GetType(),"#{0} log text!", new Exception("DDDD"));
                 i++;
-                Thread.Sleep(100);
             }
             Assert.IsTrue(true);
         }
